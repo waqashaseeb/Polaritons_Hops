@@ -1,0 +1,3 @@
+# Preserve byte-for-byte checksums of the vendored source and frozen inputs.
+* -text
+*.npz binary

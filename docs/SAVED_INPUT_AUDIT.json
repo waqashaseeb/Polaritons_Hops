@@ -1,0 +1,127 @@
+{
+  "check_type": "REAL_SAVED_INPUT_AND_ANALYTIC_BATH_DIAGNOSTICS_NOT_HOPS_PROPAGATION",
+  "anchor_checks": {
+    "Hermiticity_max_cm_inverse": 1.1368683772161603e-13,
+    "eigenpair_residual_max_cm_inverse": 7.275957614183426e-12,
+    "orthonormality_max_error": 2.4424906541753444e-15,
+    "initial_norm_error": 3.3306690738754696e-16,
+    "initial_B800_weight": 0.9929804645886575,
+    "initial_eigenstate_index": 37,
+    "initial_energy_cm_inverse": 12424.089419151074,
+    "number_molecular_baths": 73,
+    "source_input_status": "PROVISIONAL_NOT_AUTHOR_SUPPLIED",
+    "case": {
+      "name": "N4_g2",
+      "rings": 4,
+      "g0_cm_inverse": 2.0,
+      "cavity": true
+    },
+    "energy_convention": "vertical_no_counterterm",
+    "calibration_is_independent_validation": false,
+    "author_model_verified": false,
+    "relative_generator_difference_from_user_saved_anchor": 2.666846881697957e-13
+  },
+  "baths": {
+    "b8": {
+      "0.005": {
+        "horizon_ps": 0.005,
+        "maximum_complex_lineshape_error": 4.409572875142839e-06,
+        "maximum_real_lineshape_error": 4.177341529083833e-06,
+        "maximum_imaginary_lineshape_error": 1.412144004904253e-06,
+        "maximum_unit_projector_coherence_magnitude_difference": 4.06038914857465e-06,
+        "fitted_zero_frequency_spectrum_ps_inverse": 2.95880638854182,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": true,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      },
+      "0.02": {
+        "horizon_ps": 0.02,
+        "maximum_complex_lineshape_error": 2.3216746890122123e-05,
+        "maximum_real_lineshape_error": 2.1225453311013442e-05,
+        "maximum_imaginary_lineshape_error": 9.407309280659581e-06,
+        "maximum_unit_projector_coherence_magnitude_difference": 1.3922774089403234e-05,
+        "fitted_zero_frequency_spectrum_ps_inverse": 2.95880638854182,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": true,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      },
+      "0.2": {
+        "horizon_ps": 0.2,
+        "maximum_complex_lineshape_error": 0.0002920731335823176,
+        "maximum_real_lineshape_error": 0.0002194728277604696,
+        "maximum_imaginary_lineshape_error": 0.00019271324094471964,
+        "maximum_unit_projector_coherence_magnitude_difference": 1.4270637598734481e-05,
+        "fitted_zero_frequency_spectrum_ps_inverse": 2.95880638854182,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": true,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      },
+      "12.0": {
+        "horizon_ps": 12.0,
+        "maximum_complex_lineshape_error": 5.819972238282667,
+        "maximum_real_lineshape_error": 5.811775668096509,
+        "maximum_imaginary_lineshape_error": 0.3087724697934391,
+        "maximum_unit_projector_coherence_magnitude_difference": 1.4270637598734481e-05,
+        "fitted_zero_frequency_spectrum_ps_inverse": 2.95880638854182,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": false,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      }
+    },
+    "b16": {
+      "0.005": {
+        "horizon_ps": 0.005,
+        "maximum_complex_lineshape_error": 4.27902039364346e-09,
+        "maximum_real_lineshape_error": 4.278976267063639e-09,
+        "maximum_imaginary_lineshape_error": 1.9432836199581582e-11,
+        "maximum_unit_projector_coherence_magnitude_difference": 4.1591871058344054e-09,
+        "fitted_zero_frequency_spectrum_ps_inverse": 1.5751078656867996,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": true,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      },
+      "0.02": {
+        "horizon_ps": 0.02,
+        "maximum_complex_lineshape_error": 7.055359924057992e-08,
+        "maximum_real_lineshape_error": 7.055355277785225e-08,
+        "maximum_imaginary_lineshape_error": 8.097050807620576e-11,
+        "maximum_unit_projector_coherence_magnitude_difference": 4.6279889587275136e-08,
+        "fitted_zero_frequency_spectrum_ps_inverse": 1.5751078656867996,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": true,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      },
+      "0.2": {
+        "horizon_ps": 0.2,
+        "maximum_complex_lineshape_error": 7.151447674764339e-06,
+        "maximum_real_lineshape_error": 7.151447631414953e-06,
+        "maximum_imaginary_lineshape_error": 1.155078699355272e-09,
+        "maximum_unit_projector_coherence_magnitude_difference": 7.087527731375332e-08,
+        "fitted_zero_frequency_spectrum_ps_inverse": 1.5751078656867996,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": true,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      },
+      "12.0": {
+        "horizon_ps": 12.0,
+        "maximum_complex_lineshape_error": 1.2085314449725353,
+        "maximum_real_lineshape_error": 1.2085039760056304,
+        "maximum_imaginary_lineshape_error": 0.00814821857750303,
+        "maximum_unit_projector_coherence_magnitude_difference": 7.087527731375332e-08,
+        "fitted_zero_frequency_spectrum_ps_inverse": 1.5751078656867996,
+        "continuum_zero_frequency_spectrum_ps_inverse": 0.0,
+        "zero_frequency_limit_reproduced": false,
+        "finite_horizon_passed": false,
+        "diagnostic_is_not_full_system_bath_convergence": true
+      }
+    }
+  },
+  "HOPS_trajectories_run": 0
+}

@@ -1,0 +1,255 @@
+{
+  "enabled": true,
+  "scope": "SHORT_TIME_PARAMETER_AND_SIZE_CONTROLS_NOT_TRANSFER_RATE_REPRODUCTION",
+  "seed_base": 2026103101,
+  "save_every_ps": 0.0005,
+  "save_wavefunctions": true,
+  "protocol": {
+    "temperature_K": 300.0,
+    "E0_cm_inverse": 100.0,
+    "j0_cm_inverse_squared": 13933.556774473034,
+    "cavity_energy_cm_inverse": 11765.0,
+    "published_temperature_verified": false,
+    "energy_convention": "vertical_no_counterterm"
+  },
+  "preparation": {
+    "rule": "largest_B800_eigenstate_weight",
+    "minimum_B800_weight": 0.5
+  },
+  "molecular_input": null,
+  "molecular_provenance": null,
+  "physical_bath_generator_tolerance": 0.005,
+  "physical_bath_population_tolerance": 0.005,
+  "bath_fit_settings": {
+    "rank": 8,
+    "fit_dt_ps": 0.002,
+    "fit_window_ps": 2.0,
+    "pencil_rows": 300,
+    "E0_cm": 100.0,
+    "temperature_K": 300.0,
+    "positivity_pole_ps": 600.0,
+    "audit_horizon_ps": 200.0,
+    "rate_gap_max_cm": 700.0,
+    "correlation_tolerance": 0.001,
+    "integral_tolerance": 0.02,
+    "rate_tolerance": 0.005,
+    "balance_tolerance": 0.01
+  },
+  "bath_gate": {
+    "maximum_complex_lineshape_error": 0.01,
+    "audit_points": 2001,
+    "zero_frequency_tolerance_ps_inverse": 0.01,
+    "zero_frequency_residual_is_reported_even_when_finite_horizon_passes": true
+  },
+  "convergence_thresholds": {
+    "population_absolute_tolerance": 0.001,
+    "SE_multiplier": 2.0,
+    "minimum_control_pairs": 8,
+    "sampling_SE_target": 0.002
+  },
+  "cases": [
+    {
+      "name": "bare_N1",
+      "rings": 1,
+      "g0_cm_inverse": 0.0,
+      "cavity": false
+    },
+    {
+      "name": "N2_g0p8",
+      "rings": 2,
+      "g0_cm_inverse": 0.8,
+      "cavity": true
+    },
+    {
+      "name": "N3_g0p8",
+      "rings": 3,
+      "g0_cm_inverse": 0.8,
+      "cavity": true
+    },
+    {
+      "name": "N4_g0p2",
+      "rings": 4,
+      "g0_cm_inverse": 0.2,
+      "cavity": true
+    },
+    {
+      "name": "N4_g0p8",
+      "rings": 4,
+      "g0_cm_inverse": 0.8,
+      "cavity": true
+    },
+    {
+      "name": "N4_g2",
+      "rings": 4,
+      "g0_cm_inverse": 2.0,
+      "cavity": true
+    }
+  ],
+  "backend": {
+    "dt_ps": 0.0005,
+    "noise_tau_ps": 0.000125,
+    "depth": 2,
+    "delta_h": 1e-07,
+    "update_steps": 1,
+    "chunk_ps": 0.0005,
+    "noise_min_window_ps": 8.0,
+    "noise_padding_ps": 2.0,
+    "max_noise_memory_MB": 4096.0,
+    "max_active_auxiliaries": 250000,
+    "max_trajectory_seconds": 80000.0,
+    "max_fft_negative_fraction": 1e-05,
+    "norm_tolerance": 1e-06
+  },
+  "stages": {
+    "probe_d2": {
+      "trajectories": 1,
+      "tmax_ps": 0.005,
+      "bath": "b8",
+      "backend_overrides": {
+        "depth": 2,
+        "dt_ps": 0.0005,
+        "max_active_auxiliaries": 250000
+      },
+      "resources": {
+        "cpus": 1,
+        "memory": "16G",
+        "time": "01:00:00"
+      },
+      "maximum_parallel": 1
+    },
+    "probe_d3": {
+      "trajectories": 1,
+      "tmax_ps": 0.005,
+      "bath": "b8",
+      "backend_overrides": {
+        "depth": 3,
+        "dt_ps": 0.0005,
+        "max_active_auxiliaries": 1500000
+      },
+      "resources": {
+        "cpus": 1,
+        "memory": "128G",
+        "time": "06:00:00"
+      },
+      "maximum_parallel": 1
+    },
+    "pilot": {
+      "trajectories": 32,
+      "tmax_ps": 0.02,
+      "bath": "b8",
+      "backend_overrides": {
+        "depth": 2,
+        "dt_ps": 0.0005,
+        "max_active_auxiliaries": 250000
+      },
+      "resources": {
+        "cpus": 1,
+        "memory": "24G",
+        "time": "08:00:00"
+      },
+      "maximum_parallel": 40
+    },
+    "depth3": {
+      "trajectories": 8,
+      "tmax_ps": 0.02,
+      "bath": "b8",
+      "backend_overrides": {
+        "depth": 3,
+        "dt_ps": 0.0005,
+        "max_active_auxiliaries": 1500000
+      },
+      "resources": {
+        "cpus": 1,
+        "memory": "128G",
+        "time": "22:30:00"
+      },
+      "maximum_parallel": 40
+    },
+    "half_dt": {
+      "trajectories": 8,
+      "tmax_ps": 0.02,
+      "bath": "b8",
+      "backend_overrides": {
+        "depth": 2,
+        "dt_ps": 0.00025,
+        "max_active_auxiliaries": 250000
+      },
+      "resources": {
+        "cpus": 1,
+        "memory": "32G",
+        "time": "12:00:00"
+      },
+      "maximum_parallel": 40
+    },
+    "tighter_delta": {
+      "trajectories": 8,
+      "tmax_ps": 0.02,
+      "bath": "b8",
+      "backend_overrides": {
+        "depth": 2,
+        "dt_ps": 0.0005,
+        "max_active_auxiliaries": 250000,
+        "delta_h": 1e-08
+      },
+      "resources": {
+        "cpus": 1,
+        "memory": "32G",
+        "time": "12:00:00"
+      },
+      "maximum_parallel": 40
+    },
+    "bath16": {
+      "trajectories": 8,
+      "tmax_ps": 0.02,
+      "bath": "b16",
+      "backend_overrides": {
+        "depth": 2,
+        "dt_ps": 0.0005,
+        "max_active_auxiliaries": 1000000
+      },
+      "resources": {
+        "cpus": 1,
+        "memory": "64G",
+        "time": "22:30:00"
+      },
+      "maximum_parallel": 40
+    }
+  },
+  "default_sequence": [
+    "probe_d2",
+    "probe_d3",
+    "pilot",
+    "depth3",
+    "half_dt",
+    "tighter_delta",
+    "bath16"
+  ],
+  "prerequisites": {
+    "probe_d2": [],
+    "probe_d3": [
+      "probe_d2"
+    ],
+    "pilot": [
+      "probe_d2",
+      "probe_d3"
+    ],
+    "depth3": [
+      "pilot"
+    ],
+    "half_dt": [
+      "pilot"
+    ],
+    "tighter_delta": [
+      "pilot"
+    ],
+    "bath16": [
+      "pilot"
+    ]
+  },
+  "paired_controls": {
+    "depth3": "pilot",
+    "half_dt": "pilot",
+    "tighter_delta": "pilot",
+    "bath16": "pilot"
+  }
+}

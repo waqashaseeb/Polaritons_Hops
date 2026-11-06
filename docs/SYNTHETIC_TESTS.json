@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "tests_run": 4,
+  "errors": 0,
+  "failures": 0,
+  "nature": "SYNTHETIC_SCHEDULER_AND_FILESYSTEM_TESTS_ONLY",
+  "HOPS_trajectories_run": 0,
+  "Slurm_jobs_submitted": 0,
+  "covered": [
+    "RAM-limited worker count",
+    "queue time-limit selection",
+    "atomic task claiming and path isolation",
+    "nonzero failure, partial-result preservation, resume and reports"
+  ]
+}

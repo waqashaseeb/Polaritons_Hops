@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=polHOPS_N4_d2d3
+#SBATCH --partition=longq
+#SBATCH --nodes=1
+#SBATCH --ntasks=40
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=480G
+#SBATCH --time=23:00:00
+#SBATCH --signal=B:USR1@300
+#SBATCH --chdir=/home/tariq.qayyum/hpc/polariton_hops
+#SBATCH --output=/home/tariq.qayyum/hpc/polariton_hops/logs/%x_%j.out
+#SBATCH --error=/home/tariq.qayyum/hpc/polariton_hops/logs/%x_%j.err
+#SBATCH --open-mode=append
+#SBATCH --no-requeue
+
+set -euo pipefail
+PROJECT_ROOT=/home/tariq.qayyum/hpc/polariton_hops
+cd "$PROJECT_ROOT"
+source "$PROJECT_ROOT/scripts/project_env.sh"
+JOB_DIR="$PROJECT_ROOT/outputs/jobs/${SLURM_JOB_ID:?Submit Batch with sbatch}"
+if [[ -e "$JOB_DIR/summary.json" || -e "$JOB_DIR/run_record.json" ]]; then
+    printf 'A record already exists for this job ID; refusing to overwrite it. Submit a new job ID to resume.\n' >&2
+    exit 2
+fi
+mkdir -p "$JOB_DIR" "$PROJECT_ROOT/checkpoints/jobs/$SLURM_JOB_ID"
+export HOPS_DEADLINE_EPOCH="${SLURM_JOB_END_TIME:-$(( $(date +%s) + ${HOPS_ALLOCATION_SECONDS:-82800} ))}"
+
+on_exit() {
+    local rc=$?
+    if [[ ! -f "$JOB_DIR/summary.json" ]]; then
+        printf '{"job_id":"%s","job_name":"%s","status":"SETUP_FAILED","exit_code":%s,"scientific_run_verified":false}\n' \
+            "$SLURM_JOB_ID" "${SLURM_JOB_NAME:-polHOPS}" "$rc" > "$JOB_DIR/summary.json"
+        printf '# HOPS job setup did not complete\n\nJob: %s\nExit code: %s\nInspect logs/%s_%s.err.\n' \
+            "$SLURM_JOB_ID" "$rc" "${SLURM_JOB_NAME:-polHOPS}" "$SLURM_JOB_ID" > "$JOB_DIR/report.md"
+        cp "$JOB_DIR/summary.json" "$PROJECT_ROOT/reports/latest_summary.json"
+        cp "$JOB_DIR/report.md" "$PROJECT_ROOT/reports/latest_report.md"
+    fi
+}
+trap on_exit EXIT
+trap 'touch "$JOB_DIR/stop_requested"; printf "WALLTIME WARNING: stop requested; completed trajectories remain saved.\n"' USR1
+
+if ! type module >/dev/null 2>&1; then
+    [[ ! -f /etc/profile.d/modules.sh ]] || source /etc/profile.d/modules.sh
+fi
+module load anaconda3
+if ! command -v srun >/dev/null 2>&1; then module load slurm; fi
+bash "$PROJECT_ROOT/bootstrap.sh"
+HOPS_PYTHON="$PROJECT_ROOT/.venv/bin/python"
+CONFIG_PATH="${HOPS_CONFIG:-configs/validation.json}"
+
+"$HOPS_PYTHON" -u "$PROJECT_ROOT/allocation_runner.py" \
+    --config "$PROJECT_ROOT/$CONFIG_PATH" \
+    --mode "${HOPS_MODE:-hops}" \
+    --job-directory "$JOB_DIR"

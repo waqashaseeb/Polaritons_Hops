@@ -1,0 +1,63 @@
+{
+  "correlation_audit": {
+    "correlation_max_error_over_C0": 2.0516085624031097e-05,
+    "correlation_integrated_relative_error": 0.006346321740210984,
+    "spectrum_min_over_peak": 6.098135725623454e-20,
+    "spectral_rate_max_error_over_peak": 3.347737575235259e-05,
+    "Boltzmann_ratio_max_absolute_error": 1.8665943218865166e-06,
+    "audit_horizon_ps": 200.0,
+    "continuum_C0_unit_j0_ps2": 0.16389715929264953,
+    "fitted_C0_unit_j0_ps2": 0.16389716209790514,
+    "passed": true
+  },
+  "fit_info": {
+    "rank": 16,
+    "terms": 17,
+    "removed_imaginary_C0": -1.0730583088758294e-11,
+    "positive_spectrum_correction_ps2_unit_j0": 2.8165388529160622e-09,
+    "leading_singular_values": [
+      1.6294062679351957,
+      0.8838679869347941,
+      0.158722775730412,
+      0.07166445540781817,
+      0.01194829341496276,
+      0.004621134591775002,
+      0.0006751100672702025,
+      0.0002712997468047575,
+      3.4163705792438e-05,
+      8.221038580016612e-06,
+      4.555933590038413e-06,
+      7.804960282500113e-07,
+      1.031840384389452e-07,
+      6.38614949785489e-08,
+      3.802082074429621e-09,
+      1.2324523287945936e-09,
+      4.6163072371075424e-10,
+      8.655400348297329e-11,
+      8.376673162378666e-12,
+      4.425621896099866e-12,
+      2.6538794571149516e-13,
+      8.361501715729355e-14,
+      2.1379721624290516e-14,
+      9.20078025588563e-15
+    ]
+  },
+  "physical_model_audit": {
+    "maximum_actual_energy_gap_cm_inverse": 1349.6798518830092,
+    "weighted_generator_max_error_over_max_entry": 2.8250204888719915e-05,
+    "maximum_Pauli_population_difference_over_reference_horizon": 1.1501244401301847e-11,
+    "reference_horizon_ps": 0.005,
+    "reorganization_energy_cm_inverse_from_fit": 139.33143018269158,
+    "continuum_reorganization_energy_cm_inverse": 139.33556774473035,
+    "zero_frequency_spectrum_ps_inverse": 1.5751078656867996,
+    "counterterm_added": false,
+    "energy_convention": "vertical_no_counterterm",
+    "passed": true
+  },
+  "Pauli_reference_checks": {
+    "normalization_error": 2.220446049250313e-16,
+    "minimum_population": 0.0,
+    "endpoint_error": 0.0
+  },
+  "j0_was_refitted": false
+}

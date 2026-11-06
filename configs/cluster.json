@@ -1,0 +1,25 @@
+{
+  "python": ".venv/bin/python",
+  "partition": "longq",
+  "account": "",
+  "qos": "",
+  "exclude_nodes": "gn[01-08]",
+  "maximum_parallel": 40,
+  "prepare_resources": {
+    "cpus": 1,
+    "memory": "8G",
+    "time": "01:00:00"
+  },
+  "analysis_resources": {
+    "cpus": 1,
+    "memory": "8G",
+    "time": "01:00:00"
+  },
+  "reference_resources": {
+    "cpus": 1,
+    "memory": "8G",
+    "time": "03:00:00"
+  },
+  "configuration_note": "Set partition/account/qos from your actual cluster. Empty values use scheduler defaults. GPUs are deliberately not requested.",
+  "stage_resource_overrides": {}
+}

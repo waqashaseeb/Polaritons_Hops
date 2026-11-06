@@ -1,0 +1,11 @@
+{
+  "npz_sha256": "REPLACE_WITH_ACTUAL_SHA256",
+  "ordering": "B800_then_complete_B850_rings",
+  "paper_doi": "10.1063/5.0273374",
+  "source": "DESCRIBE_AUTHOR_FILE_AND_PERMISSION",
+  "disorder_realization": "SPECIFY",
+  "dipole_normalization_and_g0_convention": "SPECIFY",
+  "site_ordering_verified": false,
+  "temperature_and_calibration_verified": false,
+  "note": "This provenance record is user supplied; the software cannot independently authenticate an author claim."
+}

@@ -1,0 +1,9 @@
+{
+  "project": "MesoHOPS",
+  "tag": "v1.5.0",
+  "commit": "0213e9d34f306cd059476d44ad70198d8b187af0",
+  "repository": "https://github.com/MesoscienceLab/mesohops",
+  "license": "MIT",
+  "modifications": "none",
+  "reason": "Pinned release supports Python >=3.9, including the user Python 3.11 environment."
+}

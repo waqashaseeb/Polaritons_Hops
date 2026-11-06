@@ -1,0 +1,50 @@
+{
+  "model_config": "configs/validation.json",
+  "bare_horizon_ps": 10.0,
+  "bare_fit_window_ps": [
+    0.0,
+    3.6
+  ],
+  "saved_points": 4001,
+  "weak_g_squared_cm_inverse_squared": [
+    0.0016,
+    0.0032,
+    0.0064,
+    0.0128,
+    0.0256,
+    0.0512,
+    0.1024,
+    0.2048,
+    0.4,
+    0.8,
+    4.0,
+    20.0,
+    80.0
+  ],
+  "weak_horizon_scale_ps_cm_inverse_squared": 100.0,
+  "strong_g_squared_cm_inverse_squared": [
+    80.0,
+    400.0,
+    1600.0,
+    6400.0,
+    10000.0,
+    16000.0,
+    20000.0,
+    32000.0,
+    40000.0,
+    100000.0,
+    400000.0,
+    810000.0
+  ],
+  "strong_horizon_ps": 2000.0,
+  "requested_maximum_rings": 7,
+  "size_scan_g0_cm_inverse": [
+    0.2,
+    0.8
+  ],
+  "size_horizon_ps": 2000.0,
+  "molecular_assignment_threshold": 0.9,
+  "polariton_photon_weight_minimum": 0.1,
+  "explicit_initial_rise_fit_windows_ps": {},
+  "note": "Conditional Pauli/static references only. No unavailable N=5..7 input is synthesized. Horizon-defined rates are distinct from the published initial-rise fits. Optical LP/MP/UP peak processing is not implemented."
+}

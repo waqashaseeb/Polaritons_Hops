@@ -1,0 +1,9 @@
+{
+  "archive_name": "hops_resource_probe_depth2_20261102T102011_121026Z.zip",
+  "archive_sha256": "001993ce703596c91aaf7cb14e751b6061d88e28a503c138a94cd70baedc5c80",
+  "nested_result_member": "physical_run/physical_hops_results_smoke_20261102T102011_370955Z.zip",
+  "engine_source": "package/ in nested user result ZIP",
+  "b16_source": "campaign/baths/b16.npz",
+  "b8_source": "package/inputs/frozen_b8.npz",
+  "new_scientific_modules_executed_here": false
+}

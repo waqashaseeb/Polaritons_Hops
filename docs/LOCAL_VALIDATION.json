@@ -1,0 +1,29 @@
+{
+  "timestamp_utc": "2026-11-06T14:18:08.579328+00:00",
+  "python": "3.12.14",
+  "status": "PASS",
+  "python_files_compiled": 48,
+  "shell_files_bash_n": 10,
+  "pinned_backend_checksums": 32,
+  "checks": {
+    "CPU_queue_longq": true,
+    "forty_CPU_slots": true,
+    "one_CPU_per_task": true,
+    "walltime_23_hours": true,
+    "no_GPU_request_in_Batch": true,
+    "absolute_project_stdout": true,
+    "absolute_project_stderr": true,
+    "local_environment_declared": true,
+    "no_shared_conda_mutating_command": true
+  },
+  "errors": [],
+  "real_execution": "Compilation, shell parsing, directory/path checks, JSON parsing and source/input checksum checks only",
+  "HOPS_trajectories_run": 0,
+  "HPC_submission_performed": false,
+  "unverified": [
+    "private cluster connectivity",
+    "actual queue MaxTime and allocation policy",
+    "availability of anaconda3/Python and package downloads",
+    "new HOPS convergence and runtime"
+  ]
+}
